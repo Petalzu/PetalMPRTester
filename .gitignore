@@ -30,7 +30,6 @@ obj/
 *.swp
 *.sln.docstates
 *.pfx
-*.png
 dll/build/
 dll/.vscode/
 BundleArtifacts/
