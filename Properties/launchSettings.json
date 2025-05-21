@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "PetalMPRTester (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "PetalMPRTester (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

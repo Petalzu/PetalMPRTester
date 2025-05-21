@@ -1,0 +1,192 @@
+<Window
+    x:Class="PetalMPRTester.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="PetalMPRTester">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="36"/>
+            <!-- 标题栏高度 -->
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Grid x:Name="CustomTitleBar"
+              Grid.Row="0"
+              Grid.ColumnSpan="2"
+              Height="36"
+              Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+              VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <!-- Logo -->
+            <Image Source="Assets/Square44x44Logo.altform-unplated_targetsize-48.png"
+                   Width="24"
+                   Height="24"
+                   Margin="8,0,4,0"
+                   VerticalAlignment="Center"/>
+            <!-- 标题和关于按钮 -->
+            <StackPanel Grid.Column="1"
+                        Orientation="Horizontal"
+                        VerticalAlignment="Center"
+                        Margin="24,0,0,0">
+                <TextBlock x:Uid="AppTitle"
+                           Text="PetalMPRTester"
+                           Foreground="{ThemeResource TextControlForeground}"
+                           FontWeight="Bold"
+                           FontSize="16"
+                           VerticalAlignment="Center"/>
+                <Button x:Name="PollingTabButton"
+                        x:Uid="PollingTab"
+                        Content="回报率测试"
+                        Click="PollingTabButton_Click"
+                        Width="96"
+                        Height="36"
+                        Margin="50,0,10,0"
+                        Background="Transparent"
+                        BorderThickness="0"
+                        CornerRadius="0"
+                        Foreground="{ThemeResource TextControlForeground}"
+                        HorizontalContentAlignment="Center"
+                        VerticalContentAlignment="Center"/>
+                <Button x:Name="RealTimeSamplingTabButton"
+                        x:Uid="RealTimeSamplingTab"
+                        Content="实时采样"
+                        Click="RealTimeSamplingTabButton_Click"
+                        Width="96"
+                        Height="36"
+                        Margin="0,0,18,0"
+                        Background="Transparent"
+                        BorderThickness="0"
+                        CornerRadius="0"
+                        Foreground="{ThemeResource TextControlForeground}"
+                        HorizontalContentAlignment="Center"
+                        VerticalContentAlignment="Center"/>
+                <Button x:Name="KeyTabButton"
+                        x:Uid="KeyTest"
+                        Content="按键测试"
+                        Click="KeyTabButton_Click"
+                        Width="96"
+                        Height="36"
+                        Margin="0,0,26,0"
+                        Background="Transparent"
+                        BorderThickness="0"
+                        CornerRadius="0"
+                        Foreground="{ThemeResource TextControlForeground}"
+                        HorizontalContentAlignment="Center"
+                        VerticalContentAlignment="Center"/>
+                <Button x:Name="AboutButton"
+                        x:Uid="About"
+                        Content="关于"
+                        Click="AboutButton_Click"
+                        Width="96"
+                        Height="36"
+                        Margin="0,0,34,0"
+                        Background="Transparent"
+                        BorderThickness="0"
+                        CornerRadius="0"
+                        Foreground="{ThemeResource TextControlForeground}"
+                        HorizontalContentAlignment="Center"
+                        VerticalContentAlignment="Center"/>
+            </StackPanel>
+        </Grid>
+        <ContentControl Grid.Row="1"
+                        Grid.ColumnSpan="2"
+                        x:Name="MainContentControl">
+            <ContentControl.Content>
+                <Grid x:Name="PollingTestGrid">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <!-- 左侧内容 -->
+                    <StackPanel Margin="24,12,12,12"
+                                Spacing="14"
+                                RequestedTheme="Default"
+                                Grid.Column="0">
+                        <!-- 标题 换行英文-->
+                        <TextBlock x:Uid="PollingTitle"
+                                   Text="Petal鼠标轮询率计算器"
+                                   FontSize="24"
+                                   FontWeight="Bold"
+                                   Margin="0,0,0,8"/>
+                        <!-- 模式选择与样本数量 -->
+                        <StackPanel Orientation="Vertical"
+                                    Spacing="8">
+                            <TextBlock x:Uid="SelectMode"
+                                       Text="请选择模式："
+                                       Margin="0,0,0,4"
+                                       TextWrapping="Wrap"/>
+                            <Button x:Name="StandardTestButton"
+                                    x:Uid="StandardTest"
+                                    Content="标准测试"
+                                    Click="StandardTestButton_Click"
+                                    Margin="0,0,0,0"/>
+                            <Button x:Name="InfiniteTestButton"
+                                    x:Uid="InfiniteTest"
+                                    Content="无限测试"
+                                    Click="InfiniteTestButton_Click"
+                                    Margin="0,0,0,0"/>
+                            <StackPanel Orientation="Horizontal"
+                                        Spacing="8"
+                                        Margin="0,0,0,0"
+                                        VerticalAlignment="Center">
+                                <TextBlock x:Uid="SampleCount"
+                                           Text="单次采样数："
+                                           VerticalAlignment="Center"
+                                           TextWrapping="Wrap"/>
+                                <TextBox x:Name="SampleCountBox"
+                                         Width="80"
+                                         Text="1000"/>
+                            </StackPanel>
+                        </StackPanel>
+                        <!-- 状态与操作 -->
+                        <StackPanel Orientation="Horizontal"
+                                    Spacing="12"
+                                    Margin="0,8,0,0"
+                                    VerticalAlignment="Center">
+                            <Button x:Name="StopButton"
+                                    x:Uid="Stop"
+                                    Content="停止"
+                                    Click="StopButton_Click"
+                                    Visibility="Collapsed"
+                                    Width="80"/>
+                            <ProgressBar x:Name="SampleProgressBar"
+                                         Minimum="0"
+                                         Maximum="1000"
+                                         Height="20"
+                                         Width="180"
+                                         Margin="0,0,0,0"
+                                         Visibility="Collapsed"/>
+                        </StackPanel>
+                        <TextBlock x:Name="StatusText"
+                                   Margin="0,4,0,0"
+                                   TextWrapping="Wrap"/>
+                        <!-- 结果显示 -->
+                        <ScrollViewer Height="260"
+                                      Margin="0,8,0,0">
+                            <TextBlock x:Name="ResultTextBlock"
+                                       FontFamily="Consolas"
+                                       TextWrapping="Wrap"/>
+                        </ScrollViewer>
+                    </StackPanel>
+                    <!-- 右侧折线图 -->
+                    <Border Grid.Column="1"
+                            Margin="12,12,12,12"
+                            Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+                            CornerRadius="8"
+                            Padding="8">
+                        <Canvas x:Name="ChartCanvas"
+                                Width="880"
+                                Height="660"
+                                Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"/>
+                    </Border>
+                </Grid>
+            </ContentControl.Content>
+        </ContentControl>
+    </Grid>
+</Window>

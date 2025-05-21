@@ -1,0 +1,138 @@
+<Page
+        x:Class="PetalMPRTester.KeyTestPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        NavigationCacheMode="Enabled">
+        <Border BorderBrush="Gray"
+                BorderThickness="2"
+                CornerRadius="12"
+                Padding="0"
+                Margin="64">
+                <Grid Background="Transparent">
+                        <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock x:Uid="KeyTest"
+                                        Text="按键测试"
+                                   FontSize="32"
+                                   FontWeight="Bold"
+                                   Foreground="{ThemeResource TextControlForeground}"
+                                   HorizontalAlignment="Center"
+                                   Margin="0,40,0,40"/>
+                        <Grid Grid.Row="1"
+                              HorizontalAlignment="Center"
+                              VerticalAlignment="Center"
+                              Margin="120">
+                                <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <StackPanel Grid.Row="0"
+                                            Orientation="Horizontal"
+                                            HorizontalAlignment="Center"
+                                            Spacing="80">
+                                        <StackPanel Spacing="8"
+                                                    HorizontalAlignment="Center">
+                                                <TextBlock x:Uid="LeftButton"
+                                                                Text="左键"
+                                                           Foreground="White"
+                                                           HorizontalAlignment="Center"/>
+                                                <Ellipse x:Name="EllipseLeft"
+                                                         Width="48"
+                                                         Height="48"
+                                                         Stroke="DodgerBlue"
+                                                         StrokeThickness="5"
+                                                         Fill="Transparent"/>
+                                        </StackPanel>
+                                        <StackPanel Spacing="8"
+                                                    HorizontalAlignment="Center">
+                                                <TextBlock x:Uid="RightButton"
+                                                                Text="右键"
+                                                           Foreground="{ThemeResource TextControlForeground}"
+                                                           HorizontalAlignment="Center"/>
+                                                <Ellipse x:Name="EllipseRight"
+                                                         Width="48"
+                                                         Height="48"
+                                                         Stroke="DodgerBlue"
+                                                         StrokeThickness="5"
+                                                         Fill="Transparent"/>
+                                        </StackPanel>
+                                        <StackPanel Spacing="8"
+                                                    HorizontalAlignment="Center">
+                                                <TextBlock x:Uid="MiddleButton"
+                                                                Text="中键"
+                                                           Foreground="{ThemeResource TextControlForeground}"
+                                                           HorizontalAlignment="Center"/>
+                                                <Ellipse x:Name="EllipseMiddle"
+                                                         Width="48"
+                                                         Height="48"
+                                                         Stroke="DodgerBlue"
+                                                         StrokeThickness="5"
+                                                         Fill="Transparent"/>
+                                        </StackPanel>
+                                        <StackPanel Spacing="8"
+                                                    HorizontalAlignment="Center">
+                                                <TextBlock x:Uid="WheelUp"
+                                                                Text="中键上滑"
+                                                           Foreground="{ThemeResource TextControlForeground}"
+                                                           HorizontalAlignment="Center"/>
+                                                <Ellipse x:Name="EllipseWheelUp"
+                                                         Width="48"
+                                                         Height="48"
+                                                         Stroke="DodgerBlue"
+                                                         StrokeThickness="5"
+                                                         Fill="Transparent"/>
+                                        </StackPanel>
+                                </StackPanel>
+                                <StackPanel Grid.Row="1"
+                                            Orientation="Horizontal"
+                                            HorizontalAlignment="Center"
+                                            Spacing="80">
+                                        <StackPanel Spacing="8"
+                                                    HorizontalAlignment="Center">
+                                                <TextBlock x:Uid="WheelDown"
+                                                                Text="中键下滑"
+                                                           Foreground="{ThemeResource TextControlForeground}"
+                                                           HorizontalAlignment="Center"/>
+                                                <Ellipse x:Name="EllipseWheelDown"
+                                                         Width="48"
+                                                         Height="48"
+                                                         Stroke="DodgerBlue"
+                                                         StrokeThickness="5"
+                                                         Fill="Transparent"/>
+                                        </StackPanel>
+                                        <StackPanel Spacing="8"
+                                                    HorizontalAlignment="Center">
+                                                <TextBlock x:Uid="XButton1"
+                                                                Text="侧键1"
+                                                           Foreground="{ThemeResource TextControlForeground}"
+                                                           HorizontalAlignment="Center"/>
+                                                <Ellipse x:Name="EllipseXButton1"
+                                                         Width="48"
+                                                         Height="48"
+                                                         Stroke="DodgerBlue"
+                                                         StrokeThickness="5"
+                                                         Fill="Transparent"/>
+                                        </StackPanel>
+                                        <StackPanel Spacing="8"
+                                                    HorizontalAlignment="Center">
+                                                <TextBlock x:Uid="XButton2"
+                                                                Text="侧键2"
+                                                           Foreground="{ThemeResource TextControlForeground}"
+                                                           HorizontalAlignment="Center"/>
+                                                <Ellipse x:Name="EllipseXButton2"
+                                                         Width="48"
+                                                         Height="48"
+                                                         Stroke="DodgerBlue"
+                                                         StrokeThickness="5"
+                                                         Fill="Transparent"/>
+                                        </StackPanel>
+                                </StackPanel>
+                        </Grid>
+                </Grid>
+        </Border>
+</Page>
