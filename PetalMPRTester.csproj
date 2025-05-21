@@ -26,7 +26,6 @@
     <Content Include="Assets\Square44x44Logo.scale-200.png" />
     <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
-    <Content Include="PetalMPRTester_TemporaryKey.pfx" />
   </ItemGroup>
 
   <ItemGroup>
@@ -74,12 +73,8 @@
     <PublishTrimmed Condition="'$(Configuration)' == 'Debug'">False</PublishTrimmed>
     <PublishTrimmed Condition="'$(Configuration)' != 'Debug'">True</PublishTrimmed>
     <DefaultLanguage>zh-CN</DefaultLanguage>
-    <PackageCertificateThumbprint>9FD56B5963F526AA9C707395CE070AA9B6A461C2</PackageCertificateThumbprint>
-    <!--<AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>-->
     <SupportedOSPlatformVersion>7.0</SupportedOSPlatformVersion>
     <NuGetAuditMode>direct</NuGetAuditMode>
-    <!--<GenerateAppInstallerFile>True</GenerateAppInstallerFile>-->
-    <AppxPackageSigningTimestampDigestAlgorithm>SHA256</AppxPackageSigningTimestampDigestAlgorithm>
     <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
     <AppxSymbolPackageEnabled>False</AppxSymbolPackageEnabled>
     <GenerateTestArtifacts>True</GenerateTestArtifacts>
