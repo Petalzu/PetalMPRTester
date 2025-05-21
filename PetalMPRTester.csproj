@@ -9,7 +9,9 @@
     <RuntimeIdentifiers>win-x86;win-x64;win-arm64</RuntimeIdentifiers>
     <PublishProfile>win-$(Platform).pubxml</PublishProfile>
     <UseWinUI>true</UseWinUI>
-    <EnableMsixTooling>true</EnableMsixTooling>
+    <WindowsPackageType>None</WindowsPackageType>
+    <WindowsAppSDKSelfContained>true</WindowsAppSDKSelfContained>
+    <EnableMsixTooling>false</EnableMsixTooling>
     <Nullable>enable</Nullable>
   </PropertyGroup>
   <ItemGroup>
@@ -73,10 +75,10 @@
     <PublishTrimmed Condition="'$(Configuration)' != 'Debug'">True</PublishTrimmed>
     <DefaultLanguage>zh-CN</DefaultLanguage>
     <PackageCertificateThumbprint>9FD56B5963F526AA9C707395CE070AA9B6A461C2</PackageCertificateThumbprint>
-    <AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
+    <!--<AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>-->
     <SupportedOSPlatformVersion>7.0</SupportedOSPlatformVersion>
     <NuGetAuditMode>direct</NuGetAuditMode>
-    <GenerateAppInstallerFile>True</GenerateAppInstallerFile>
+    <!--<GenerateAppInstallerFile>True</GenerateAppInstallerFile>-->
     <AppxPackageSigningTimestampDigestAlgorithm>SHA256</AppxPackageSigningTimestampDigestAlgorithm>
     <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
     <AppxSymbolPackageEnabled>False</AppxSymbolPackageEnabled>
