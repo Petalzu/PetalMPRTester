@@ -12,6 +12,10 @@ PetalMPRTester (Petal Mouse Polling Rate Tester) is a modern Windows desktop app
 1. Open `PetalMPRTester.sln` in Visual Studio.
 2. Build and run the project.
 
+或者下载发行版并运行。
+
+Or download the release and run it.
+
 ## 技术栈 / Tech Stack
 - [C#](https://docs.microsoft.com/dotnet/csharp/)
 - [WinUI 3](https://learn.microsoft.com/windows/apps/winui/winui3/)
